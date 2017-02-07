@@ -1,42 +1,24 @@
-(function() {
-  let Component = ng.core.Component;
-  let NgModule = ng.core.NgModule;
-  let BrowserModule = ng.platformBrowser.BrowserModule;
-  let platformBrowserDynamic = ng.platformBrowserDynamic.platformBrowserDynamic;
+(function(app) {
+  var Class = ng.core.Class;
 
-  let RandomQuoteComponent = Component({
-    selector: 'random-quote',
-    template: '<p><em>{{quote.line}}</em> - {{quote.author}}</p>'
-  })
-  .Class({
-    constructor: function() {
-      let randomIndex = Math.floor(Math.random() * quotes.length);
-      this.quote = quotes[randomIndex];
+  app.QuoteService = Class({
+    constructor: function QuoteService() {
+      this.quotes = sampleQuotes;
+    },
+    getRandomQuote: function() {
+      var randomIndex = Math.floor(Math.random() * this.quotes.length);
+      return this.quotes[randomIndex];
+    },
+    generateRandomQuotes: function(delay, callback) {
+      var self = this;
+      callback(this.getRandomQuote());
+      setTimeout(function() {
+        callback(self.getRandomQuote());
+      }, delay);
     }
   });
 
-  let AppComponent = Component({
-    selector: 'my-app',
-    template:
-      '<h1>Random Quote</h1>' +
-      '<random-quote></random-quote>'
-  })
-  .Class({
-    constructor: function() { }
-  });
-
-  let AppModule = NgModule({
-    imports: [BrowserModule],
-    declarations: [AppComponent, RandomQuoteComponent],
-    bootstrap: [AppComponent]
-  })
-  .Class({
-    constructor: function() { }
-  });
-
-  platformBrowserDynamic().bootstrapModule(AppModule);
-
-  let quotes = [
+  var sampleQuotes = [
     {
       "line": "Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it.",
       "author": "Brian W. Kernighan"
@@ -79,4 +61,4 @@
     }
   ];
 
-})();
+})(window.app || (window.app = {}));
