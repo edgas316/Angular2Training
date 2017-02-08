@@ -4,7 +4,9 @@
 
   app.AppComponent = Component({
     selector: 'my-app',
-    template:"/app.component.html"
+    template:({
+      url:"/app.component.html"
+    })
   })
   .Class({
     constructor: function() { }

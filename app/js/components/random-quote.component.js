@@ -6,7 +6,9 @@
 
   app.RandomQuoteComponent = Component({
     selector: 'random-quote',
-    template: '/random-quote.component.html'
+    template: ({
+      url:'/random-quote.component.html'
+    })
   })
   .Class({
     constructor: [QuoteService, function RandomQuoteComponent(a) {
