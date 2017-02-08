@@ -7,11 +7,11 @@
     selector: 'my-app',
     templateUrl: 'app/js/appcomponent.html'
     })
-    .Class({
+    
+  ]
+ app.AppComponent.Class({
       constructor: function() { }
     })
-  ]
-
 })(window.app || (window.app = {}));
 
 

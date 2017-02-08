@@ -10,7 +10,10 @@
       selector: 'random-quote',
       templateUrl: 'app/js/randomquotecomponent.html'
     })
-    .Class({
+    
+  ]
+  
+  app.RandomQuoteComponent.Class({
       constructor: [QuoteService, function RandomQuoteComponent(a) {
         let self = this
         a.generateRandomQuote(2000, function(quote){
@@ -18,6 +21,5 @@
         })
       }]
     })
-  ]
 
 })(window.app || (window.app = {}));
