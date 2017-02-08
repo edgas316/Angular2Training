@@ -6,7 +6,7 @@
   app.RandomQuoteComponent = function(){}
 
   app.RandomQuoteComponent.annotaion = [
-    Component({
+    new Component({
       selector: 'random-quote',
       templateUrl: 'app/js/randomquotecomponent.html'
     })

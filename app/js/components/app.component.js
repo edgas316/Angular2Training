@@ -3,7 +3,7 @@
   let Component = ng.core.Component;
   app.AppComponent = function(){}
   app.AppComponent.annotation = [
-    Component({
+    new Component({
     selector: 'my-app',
     templateUrl: 'app/js/appcomponent.html'
     })
