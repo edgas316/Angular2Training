@@ -6,13 +6,19 @@
   let QuoteService = app.QuoteService
   let RandomQuoteComponent = app.RandomQuoteComponent
   let AppComponent = app.AppComponent
+  
+  app.AppModule = function AppModule(){}
+  
+  
 
-  app.AppModule = NgModule({
-    imports: [BrowserModule],
-    declarations: [AppComponent, RandomQuoteComponent],
-    providers: [QuoteService],
-    bootstrap: [AppComponent]
-  })
+  app.AppModule.annotation = [
+    new NgModule({
+      imports: [BrowserModule],
+      declarations: [AppComponent, RandomQuoteComponent],
+      providers: [QuoteService],
+      bootstrap: [AppComponent]
+    })
+  ]
   .Class({
     constructor: function() { }
   });
