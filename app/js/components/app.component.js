@@ -1,7 +1,7 @@
 (function(app) {
 
   let Component = ng.core.Component;
-
+  app.AppComponent = function(){}
   app.AppComponent.annotation = [
     Component({
     selector: 'my-app',

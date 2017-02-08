@@ -2,7 +2,8 @@
 
   let Component = ng.core.Component;
   let QuoteService = app.QuoteService
-
+  
+  app.RandomQuoteComponent = function(){}
 
   app.RandomQuoteComponent.annotaion = [
     Component({
