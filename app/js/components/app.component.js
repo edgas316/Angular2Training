@@ -2,12 +2,16 @@
 
   let Component = ng.core.Component;
 
-  app.AppComponent = Component({
+  app.AppComponent.annotation = [
+    Component({
     selector: 'my-app',
-    templateUrl: 'app/js/app.component.html'
-  })
-  .Class({
-    constructor: function() { }
-  });
+    templateUrl: 'app/js/appcomponent.html'
+    })
+    .Class({
+      constructor: function() { }
+    })
+  ]
 
 })(window.app || (window.app = {}));
+
+

@@ -4,18 +4,19 @@
   let QuoteService = app.QuoteService
 
 
-  app.RandomQuoteComponent = Component({
-    selector: 'random-quote',
-    templateUrl: 'app/js/random-quote.component.html'
-  })
-  .Class({
-    constructor: [QuoteService, function RandomQuoteComponent(a) {
-      let self = this
-      a.generateRandomQuote(2000, function(quote){
-        self.quote = quote
-      })
-          
-        }]
-  });
+  app.RandomQuoteComponent.annotaion = [
+    Component({
+      selector: 'random-quote',
+      templateUrl: 'app/js/randomquotecomponent.html'
+    })
+    .Class({
+      constructor: [QuoteService, function RandomQuoteComponent(a) {
+        let self = this
+        a.generateRandomQuote(2000, function(quote){
+          self.quote = quote
+        })
+      }]
+    })
+  ]
 
 })(window.app || (window.app = {}));
