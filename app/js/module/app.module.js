@@ -19,9 +19,7 @@
       bootstrap: [AppComponent]
     })
   ]
-  .Class({
-    constructor: function() { }
-  });
+  
 
 
 })(window.app || (window.app = {}));
